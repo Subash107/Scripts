@@ -1,0 +1,11 @@
+groups:
+  - name: ping_alerts
+    rules:
+      - alert: ServerDown
+        expr: probe_success{job="ping_servers"} == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "🚨 Server {{ $labels.instance }} is DOWN"
+          description: "Ping failed for more than 30 seconds."

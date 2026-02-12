@@ -1,0 +1,16 @@
+global:
+  resolve_timeout: 1m
+  smtp_smarthost: "smtp.gmail.com:587"
+  smtp_from: "yourgmail@gmail.com"
+  smtp_auth_username: "yourgmail@gmail.com"
+  smtp_auth_password: "YOUR_APP_PASSWORD"
+  smtp_require_tls: true
+
+route:
+  receiver: "gmail"
+
+receivers:
+  - name: "gmail"
+    email_configs:
+      - to: "yourgmail@gmail.com"
+        send_resolved: true
