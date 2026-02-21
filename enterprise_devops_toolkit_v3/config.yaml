@@ -1,0 +1,14 @@
+service:
+  name: "Spooler"
+
+disk:
+  threshold: 80
+
+log_monitor:
+  file_path: "C:/Windows/System32/LogFiles/HTTPERR/httperr1.log"
+  keywords:
+    - "ERROR"
+    - "CRITICAL"
+
+alerts:
+  slack_webhook: ""
